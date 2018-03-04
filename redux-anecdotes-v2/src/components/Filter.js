@@ -21,9 +21,6 @@ class Filter extends React.Component {
   }
 }
 
-Filter.contextTypes = {
-  store: PropTypes.object
-}
 
 const mapDispatchToProps = {
   updateFilter

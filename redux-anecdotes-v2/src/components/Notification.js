@@ -22,9 +22,6 @@ class Notification extends React.Component {
   }
 }
 
-Notification.contextTypes = {
-  store: PropTypes.object
-}
 
 const mapStateToProps = (state) => {
   return {

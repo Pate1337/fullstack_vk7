@@ -44,9 +44,6 @@ const anecdotesToShow = (anecdotes, filter) => {
     a.content.toLowerCase().indexOf(filter.toLowerCase()) !== -1)
 }
 
-AnecdoteList.contextTypes = {
-  store: PropTypes.object
-}
 
 const mapStateToProps = (state) => {
   return {
