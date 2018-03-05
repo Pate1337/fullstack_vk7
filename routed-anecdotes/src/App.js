@@ -1,13 +1,22 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom'
 
-const Menu = () => (
-  <div>
-    <Link to="/">anecdotes</Link>&nbsp;
-    <Link to="/create">create new</Link>&nbsp;
-    <Link to="/about">about</Link>&nbsp;
-  </div>
-)
+const Menu = () => {
+  const activeStyle = {
+    backgroundColor: 'rgb(0, 206, 96)'
+  }
+  const barStyle = {
+    display: 'inline',
+    backgroundColor: 'rgb(177, 227, 255)'
+  }
+  return (
+    <div style={barStyle}>
+      <NavLink exact to="/" activeStyle={activeStyle}>anecdotes</NavLink>&nbsp;
+      <NavLink exact to="/create" activeStyle={activeStyle}>create new</NavLink>&nbsp;
+      <NavLink exact to="/about" activeStyle={activeStyle}>about</NavLink>&nbsp;
+    </div>
+  )
+}
 
 
 const AnecdoteList = ({ anecdotes }) => (
@@ -110,9 +119,23 @@ const Notification = (props) => {
   if (props.message === null) {
     return null
   }
+  const inlineStyle = {
+    color: 'red',
+    backgroundColor: 'green',
+    border: '2px solid red',
+    borderRadius: '10px',
+    textAlign: 'center',
+    display: 'inline',
+    padding: '5px',
+    marginTop: '10px',
+    marginBottom: '10px'
+  }
   return (
-    <div className="notification">
-      {props.message}
+    <div>
+      <p></p>
+      <div style={inlineStyle}>
+        {props.message}
+      </div>
     </div>
   )
 }
