@@ -1,6 +1,5 @@
 import React from 'react'
 import { updateFilter } from '../reducers/filterReducer'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 class Filter extends React.Component {
